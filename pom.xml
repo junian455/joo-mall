@@ -16,6 +16,9 @@
         <module>joomall-member</module>
         <module>joomall-coupon</module>
         <module>joomall-ware</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>joomall-common</module>
     </modules>
 
     <properties>
@@ -23,6 +26,10 @@
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
         <spring.cloud.version>Hoxton.SR1</spring.cloud.version>
         <spring-cloud-alibaba.version>2.2.2.RELEASE</spring-cloud-alibaba.version>
+        <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <lombok.version>1.18.8</lombok.version>
+        <httpcomponents.version>4.4.13</httpcomponents.version>
+        <commons-lang.version>2.6</commons-lang.version>
     </properties>
 
     <dependencyManagement>
@@ -53,6 +60,34 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- mybatisPLUS-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <<version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!--简化实体类，用@Data代替getset方法 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- httpcomponent包。发送http请求 -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>${httpcomponents.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 </project>

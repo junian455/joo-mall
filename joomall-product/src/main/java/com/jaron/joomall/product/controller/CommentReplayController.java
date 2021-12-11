@@ -2,8 +2,6 @@ package com.jaron.joomall.product.controller;
 
 import java.util.Arrays;
 import java.util.Map;
-
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +21,7 @@ import com.jaron.common.utils.R;
  *
  * @author jaron
  * @email jaron@qq.com
- * @date 2021-12-08 23:23:42
+ * @date 2021-12-10 23:11:16
  */
 @RestController
 @RequestMapping("product/commentreplay")
@@ -35,7 +33,7 @@ public class CommentReplayController {
      * 列表
      */
     @RequestMapping("/list")
-    @RequiresPermissions("product:commentreplay:list")
+    // @RequiresPermissions("product:commentreplay:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = commentReplayService.queryPage(params);
 
@@ -47,7 +45,7 @@ public class CommentReplayController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    @RequiresPermissions("product:commentreplay:info")
+    // @RequiresPermissions("product:commentreplay:info")
     public R info(@PathVariable("id") Long id){
 		CommentReplayEntity commentReplay = commentReplayService.getById(id);
 
@@ -58,7 +56,7 @@ public class CommentReplayController {
      * 保存
      */
     @RequestMapping("/save")
-    @RequiresPermissions("product:commentreplay:save")
+    // @RequiresPermissions("product:commentreplay:save")
     public R save(@RequestBody CommentReplayEntity commentReplay){
 		commentReplayService.save(commentReplay);
 
@@ -69,7 +67,7 @@ public class CommentReplayController {
      * 修改
      */
     @RequestMapping("/update")
-    @RequiresPermissions("product:commentreplay:update")
+    // @RequiresPermissions("product:commentreplay:update")
     public R update(@RequestBody CommentReplayEntity commentReplay){
 		commentReplayService.updateById(commentReplay);
 
@@ -80,7 +78,7 @@ public class CommentReplayController {
      * 删除
      */
     @RequestMapping("/delete")
-    @RequiresPermissions("product:commentreplay:delete")
+    // @RequiresPermissions("product:commentreplay:delete")
     public R delete(@RequestBody Long[] ids){
 		commentReplayService.removeByIds(Arrays.asList(ids));
 

@@ -27,6 +27,7 @@
         <spring.cloud.version>Hoxton.SR1</spring.cloud.version>
         <spring-cloud-alibaba.version>2.2.2.RELEASE</spring-cloud-alibaba.version>
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <mysql.version>8.0.25</mysql.version>
         <lombok.version>1.18.8</lombok.version>
         <httpcomponents.version>4.4.13</httpcomponents.version>
         <commons-lang.version>2.6</commons-lang.version>
@@ -65,7 +66,14 @@
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
-                <<version>${mybatis-plus.version}</version>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!--  mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
 
             <!--简化实体类，用@Data代替getset方法 -->

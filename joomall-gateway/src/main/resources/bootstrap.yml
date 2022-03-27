@@ -1,0 +1,10 @@
+# 每个服务有自己的命名空间，再用分组决定 dev prod test环境 或者是 特定时期 如 双11 618节日的分组
+spring :
+    application :
+        name : joomall-gateway
+    cloud :
+        nacos :
+            config :
+                server-addr : 127.0.0.1:8848
+                namespace : 98ff602a-df21-41ae-9f0f-6894c0b1212a
+#                group : dev

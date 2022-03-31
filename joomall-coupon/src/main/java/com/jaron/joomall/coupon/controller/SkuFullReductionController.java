@@ -1,18 +1,15 @@
 package com.jaron.joomall.coupon.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.jaron.joomall.coupon.entity.SkuFullReductionEntity;
-import com.jaron.joomall.coupon.service.SkuFullReductionService;
+import com.jaron.common.to.SkuReductionTo;
 import com.jaron.common.utils.PageUtils;
 import com.jaron.common.utils.R;
+import com.jaron.joomall.coupon.entity.SkuFullReductionEntity;
+import com.jaron.joomall.coupon.service.SkuFullReductionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 
@@ -28,6 +25,13 @@ import com.jaron.common.utils.R;
 public class SkuFullReductionController {
     @Autowired
     private SkuFullReductionService skuFullReductionService;
+
+    @PostMapping("/saveinfo")
+    public R saveInfo(@RequestBody SkuReductionTo reductionTo){
+
+        skuFullReductionService.saveSkuReduction(reductionTo);
+        return R.ok();
+    }
 
     /**
      * 列表

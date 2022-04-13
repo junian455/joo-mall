@@ -1,4 +1,4 @@
-package com.jaron.joomall.product.controller;
+package com.jaron.joomall.product.app;
 
 import java.util.Arrays;
 import java.util.Map;
